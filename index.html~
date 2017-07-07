@@ -35,12 +35,11 @@
 <link rel="stylesheet" href="filtrify/css/sunburst.css">
 <link rel="stylesheet" href="filtrify/css/filtrify.css">
 
-    <!--  -->
-<script src="vendor/jquery/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="filtrify/js/highlight.pack.js"></script>
 <script src="filtrify/js/script.js"></script>
 <script src="filtrify/js/filtrify.min.js"></script>
-<script src="filtrify/js/isotope.pkgd.min.js"></script>
+<script src="filtrify/js/jquery.isotope.min.js"></script>
 
 <style>
 /**** Isotope Filtering ****/
@@ -98,17 +97,17 @@
 
 $(function() {
     
-    var gridContainer = $("#grid");
+    var container = $("#containerId");
     
-    gridContainer.isotope({
-        itemSelector : '.grid-item',
+    container.isotope({
+        itemSelector : 'ul#containerId > li',
         layoutMode : 'fitRows'
     });
     
-    $.filtrify("grid", "placeHolder", {
+    $.filtrify("containerId", "placeHolder", {
         hide     : false,
         callback : function ( query, match, mismatch ) {
-            gridContainer.isotope({ filter : $(match) });
+            container.isotope({ filter : $(match) });
         }
     });
 
@@ -169,11 +168,11 @@ $(function() {
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-circle" src="img/profile.jpg" alt="">
+                    <img class="img-responsive img-circle" src="img/profile.png" alt="">
                     <div class="intro-text">
                         <h1 class="name">Ernesto Jimenez</h1>
                         <hr class="star-primary">
-                        <span class="skills">Software Developer - Chemical Engineer</span>
+                        <span class="skills">Front-End Developer - Chemical Engineer - Business Developer</span>
                     </div>
                 </div>
             </div>
@@ -209,65 +208,67 @@ $(function() {
                 </div>
             </div>
             <div class="row">
-                <div id="placeHolder"></div>
-                <div id="grid">
-                    <div class="grid-item portfolio-item" data-language="HTML, WordPress" data-frameworks="">
-                            <a href="#aerotuckModal" class="portfolio-link" data-toggle="modal">
-                                <div class="caption">
-                                    <div class="caption-content">
-                                        <p class="small">Blog on Cycling Aerodynamics</p>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/aerotuck.png" class="img-responsive img-portfolio" alt="aerotuck">
-                            </a>
-                    </div>
-                    <div class="grid-item portfolio-item" data-language="HTML, JavaScript, CSS" data-frameworks="React.js">
-                            <a href="#leaderboardModal" class="portfolio-link" data-toggle="modal">
-                                <div class="caption">
-                                    <div class="caption-content">
-                                        <p class="small">FCC Leaderboard</p>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/leaderboard.png" class="img-responsive img-portfolio" alt="leaderboard">
-                            </a>
-                    </div>
-                     <div class="grid-item portfolio-item" data-language="HTML, JavaScript" data-frameworks="">
-<!--                        <div class="col-sm-4 portfolio-item">-->
-                            <a href="#sharpSpringModal" class="portfolio-link" data-toggle="modal">
-                                <div class="caption">
-                                    <div class="caption-content">
-                                        <p class="small">Sales Data Analysis Tool using SharpSpring API</p>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/sharpspring.png" class="img-responsive img-portfolio" alt="Sales KPIs">
-                            </a>
-<!--                        </div>-->
-                    </div>
-                    <div class="grid-item portfolio-item" data-language="HTML, JavaScript, CSS" data-frameworks="">
-                            <a href="#simonModal" class="portfolio-link" data-toggle="modal">
-                                <div class="caption">
-                                    <div class="caption-content">
-                                        <p class="small">Simon Game</p>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/simon.png" class="img-responsive img-portfolio" alt="Simon game">
-                            </a>
-                    </div>
-                    <div class="grid-item portfolio-item" data-language="HTML, JavaScript, CSS" data-frameworks="">
-                            <a href="#ticTacToeModal" class="portfolio-link" data-toggle="modal">
-                                <div class="caption">
-                                    <div class="caption-content">
-                                        <p class="small">Tic-Tac-Toe Game</p>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/tictactoe.png" class="img-responsive img-portfolio" alt="Tic-Tac-Toe">
-                            </a>
-                    </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <p>Tic-Tac-Toe Game (JavaScript)</p>
+                            </div>
+                        </div>
+                        <img id="porfolio-javascript" src="img/portfolio/javascript.png" class="img-responsive" alt="Slice of cake">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <p>FCC Leaderboard (React.js)</p>
+                            </div>
+                        </div>
+                        <img id="porfolio-reactJS" src="img/portfolio/reactJS.png" class="img-responsive" alt="Circus tent">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <p>Simon Game <br/>(JavaScript)</p>
+                            </div>
+                        </div>
+                        <img id="portfolio-htmlcss" src="img/portfolio/htmlcss.png" class="img-responsive" alt="Game controller">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <p>Blog on Cycling Aerodynamics (WordPress)</p>
+                            </div>
+                        </div>
+                        <img id="portfolio-aerotuck" src="img/portfolio/aerotuck.png" class="img-responsive" alt="Cabin">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <p>Sales Data Analysis Tool using SharpSpring API (JavaScript)</p>
+                            </div>
+                        </div>
+                        <img id="portfolio-sharpspring" src="img/portfolio/sharpspring.png" class="img-responsive" alt="Cabin">
+                    </a>
                 </div>
             </div>
         </div>
+        <div id="placeHolder"></div>
+            <ul id="containerID">
+                <li data-genre="pop, rock, british, classic rock"> The Beatles </li>
+                <li data-genre="rock, british, blues, classic rock"> The Rolling Stones </li>
+                <li data-genre="alternative, electronic, female vocalists"> Björk </li>
+                <li data-genre="rock, alternative, grunge"> Foo Fighters </li>
+                <li data-genre="rock, classic rock"> Bruce Springsteen </li>
+            </ul>
     </section>
-    <!-- /Portfolio -->
 
     <!-- Experience Section -->    
     <section class="success" id="experience">
@@ -418,56 +419,75 @@ $(function() {
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                        <p class="skill-summary">
-                            Work with JavaScript on web design and development, and have worked in MATLAB to build numerical models and simulations.
-                        </p>
-                    <div class="row">
+                    <div class="row inside">
                         <h3>Front-End</h3>
+                        <p class="skill-summary">
+                            Worked primarily with JavaScript, Python and C++, with frameworks such as Express.js, Koa.js, React.js, Django and Flask.
+                        </p>
+                        <p class="skill-summary">
+                            Interested in functional programming and serverless architectures, exploring with Erlang and AWS Lambda respectively.
+                        </p>
                         <!-- Bars -->
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                            <div class="progress-bar progress-bar-advanced" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
                                 HTML
                             </div>
                         </div>
-<!--                        <p class="skill-summary">HTML5</p>-->
+                        <p class="skill-summary">HTML5</p>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            <div class="progress-bar progress-bar-intermediate" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
                                 JavaScript
                             </div>
                         </div>
-<!--                        <p class="skill-summary">Ajax, Angular 2, Backbone.js, Bootstrap, Ember.js, ES6, jQuery, React/Redux, Vanilla.js</p>-->
+                        <p class="skill-summary">Ajax, Angular 2, Backbone.js, Bootstrap, Ember.js, ES6, jQuery, React/Redux, Vanilla.js</p>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            <div class="progress-bar progress-bar-intermediate" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
                                 CSS
                             </div>
                         </div>
-<!--                        <p class="skill-summary">CSS3, SASS</p>-->
+                        <p class="skill-summary">CSS3, SASS</p>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            <div class="progress-bar progress-bar-intermediate" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
                                 React.js
                             </div>
                         </div>
                         <!-- End Bars -->
+                        <h4>Workflows</h4>
+                        <div class="progress">  
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                Git
+                            </div>
+                        </div><!--
+                        <div class="progress">  
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                Gulp
+                            </div>
+                        </div>
+                        <div class="progress">  
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                Jenkins
+                            </div>
+                        </div>-->
                     </div>
                     <div class="row inside">
                         <h3>Back-End</h3>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 Node.js
                             </div>
                         </div><!--
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 ASP.NET
                             </div>
                         </div>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 LAMP
                             </div>
                         </div>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 MySQL
                             </div>
                         </div>
@@ -477,53 +497,35 @@ $(function() {
                             </div>
                         </div>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 RESTful API
                             </div>
                         </div>-->
                     </div>
-                        <div class="row">                        
-                            <h3>Workflows</h3>
-                        <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                Git
-                            </div>
-                            </div><!--
-                            <div class="progress">  
-                                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                    Gulp
-                                </div>
-                            </div>
-                            <div class="progress">  
-                                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                    Jenkins
-                                </div>
-                            </div>-->
-                        </div>
                     <div class="row inside">
                         <h3>Other</h3>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            <div class="progress-bar progress-bar-intermediate" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
                                 MATLAB
                             </div>
                         </div>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            <div class="progress-bar progress-bar-intermediate" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
                                 WordPress
                             </div>
                         </div><!--
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 C++
                             </div>
                         </div>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 Java
                             </div>
                         </div>
                         <div class="progress">  
-                            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                            <div class="progress-bar progress-bar-basic" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                 Python
                             </div>
                         </div>-->
@@ -638,9 +640,7 @@ $(function() {
     </div>
 
     <!-- Portfolio Modals -->
-    
-    <!-- AeroTuck Modal -->
-    <div class="portfolio-modal modal fade" id="aerotuckModal" tabindex="-1" role="dialog" aria-hidden="true"> <!-- Modal-Edit: id -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -652,17 +652,22 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>AeroTuck</h2> <!-- Modal-Edit: <h2> -->
+                            <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/aerotuck.png" class="img-responsive img-centered" alt=""><!-- Modal-Edit: src -->
-                            <p>Personal blog on cycling aerodynamics and cycling products. I manage the entire website and write the content.</p> <!-- Modal-Edit: <p> -->
+                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>View:
-                                    <strong><a href="https://aerotuck.com">aerotuck.com</a><!-- Modal-Edit: <a> -->
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>Updated:
-                                    <strong>Current</strong><!-- Modal-Edit: <strong> -->
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -672,10 +677,7 @@ $(function() {
             </div>
         </div>
     </div>
-    <!-- /AeroTuck Modal -->
-    
-    <!-- Sharp Spring Modal -->
-    <div class="portfolio-modal modal fade" id="sharpSpringModal" tabindex="-1" role="dialog" aria-hidden="true"> <!-- Modal-Edit: id -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -687,17 +689,22 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Sales KPIs Analysis</h2> <!-- Modal-Edit: <h2> -->
+                            <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/sharpspring.png" class="img-responsive img-centered" alt=""><!-- Modal-Edit: src -->
-                            <p>Built a tool for former employer to help them collect sales data from Sharp Spring’s API. Tool computes KPI’s over time for the company’s sales team.</p> <!-- Modal-Edit: <p> -->
+                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>View:
-                                    <strong><a href="https://codepen.io/aeronesto/pen/PWwNQb">Sample</a><!-- Modal-Edit: <a> -->
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>Updated:
-                                    <strong>February 2017</strong><!-- Modal-Edit: <strong> -->
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -707,10 +714,7 @@ $(function() {
             </div>
         </div>
     </div>
-    <!-- /Sharp Spring Modal -->
-    
-    <!-- Simon Modal -->
-    <div class="portfolio-modal modal fade" id="simonModal" tabindex="-1" role="dialog" aria-hidden="true"> <!-- Modal-Edit: id -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -722,17 +726,22 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Simon Game</h2> <!-- Modal-Edit: <h2> -->
+                            <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/simon.png" class="img-responsive img-centered" alt=""><!-- Modal-Edit: src -->
-                            <p>A virtual Simon game built with JavaScript. Project from <a target="_blank" href="https://www.freecodecamp.org/challenges/build-a-simon-game">freeCodeCamp</a>.</p> <!-- Modal-Edit: <p> -->
+                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>View:
-                                    <strong><a target="_blank" href="https://codepen.io/aeronesto/pen/QdPMdw">Live</a><!-- Modal-Edit: <a> -->
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>Updated:
-                                    <strong>April 2017</strong><!-- Modal-Edit: <strong> -->
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -742,10 +751,7 @@ $(function() {
             </div>
         </div>
     </div>
-    <!-- /Simon Modal -->
-    
-    <!-- Tic-Tac-Toe Modal -->
-    <div class="portfolio-modal modal fade" id="ticTacToeModal" tabindex="-1" role="dialog" aria-hidden="true"> <!-- Modal-Edit: id -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -757,17 +763,22 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Tic-Tac-Toe Game</h2> <!-- Modal-Edit: <h2> -->
+                            <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/tictactoe.png" class="img-responsive img-centered" alt=""><!-- Modal-Edit: src -->
-                            <p>Virtual Tic-Tac-Toe game built JavaScript. Can play two-players or against computer that is impossible to beat. Project from <a target="_blank" href="https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game">freeCodeCamp</a>.</p> <!-- Modal-Edit: <p> -->
+                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>View:
-                                    <strong><a href="https://codepen.io/aeronesto/pen/dvpJLZ">Live</a><!-- Modal-Edit: <a> -->
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>Updated:
-                                    <strong>February 2017</strong><!-- Modal-Edit: <strong> -->
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -777,10 +788,7 @@ $(function() {
             </div>
         </div>
     </div>
-    <!-- /Tic-Tac-Toe Modal -->
-    
-    <!-- Leaderboard Modal -->
-    <div class="portfolio-modal modal fade" id="leaderboardModal" tabindex="-1" role="dialog" aria-hidden="true"> <!-- Modal-Edit: id -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -792,17 +800,22 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>FCC Leaderboard</h2> <!-- Modal-Edit: <h2> -->
+                            <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/leaderboard.png" class="img-responsive img-centered" alt=""><!-- Modal-Edit: src -->
-                            <p>Live leaderboard of freeCodeCamp Campers. Project from <a target="_blank" href="https://www.freecodecamp.org/challenges/build-a-camper-leaderboard">freeCodeCamp</a>.</p> <!-- Modal-Edit: <p> -->
+                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>View:
-                                    <strong><a href="https://codepen.io/aeronesto/pen/bRRXeQ">Live</a><!-- Modal-Edit: <a> -->
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>Updated:
-                                    <strong>June 2017</strong><!-- Modal-Edit: <strong> -->
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -812,10 +825,47 @@ $(function() {
             </div>
         </div>
     </div>
-    <!-- /Leaderboard Modal -->
-    
-    <!-- /Portfolio Modals -->  
-    
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button id="btnSubmit" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 

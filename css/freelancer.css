@@ -11,14 +11,14 @@ p {
   font-size: 20px;
 }
 p.small {
-  font-size: 16px;
+  font-size: 18px;
 }
 a,
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #18BC9C;
+  color: blue;
 }
 h1,
 h2,
@@ -50,11 +50,11 @@ hr.star-primary:after {
   padding: 0 0.25em;
 }
 hr.star-light {
-  border-color: white;
+  border-color: #2C3E50;
 }
 hr.star-light:after {
-  background-color: #18BC9C;
-  color: white;
+  background-color: #9DD;
+  color: #2C3E50;
 }
 hr.star-primary {
   border-color: #2C3E50;
@@ -68,8 +68,8 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18BC9C;
-  color: white;
+  background: white;
+  color: #2C3E50;
 }
 header .container {
   padding-top: 100px;
@@ -78,6 +78,7 @@ header .container {
 header img {
   display: block;
   margin: 0 auto 20px;
+    width: 60%;
 }
 header .intro-text .name {
   display: block;
@@ -125,7 +126,7 @@ header .intro-text .skills {
   color: white;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: #18BC9C;
+  color: #9DD;
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
@@ -133,13 +134,13 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-nav li.active a {
   color: white;
-  background: #18BC9C;
+  background: #9DD;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
   color: white;
-  background: #18BC9C;
+  background: #9DD;
 }
 .navbar-custom .navbar-toggle {
   color: white;
@@ -181,8 +182,8 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #18BC9C;
-  color: white;
+  background: #9DD;
+  color: #2C3E50;
 }
 @media (max-width: 767px) {
   section {
@@ -192,10 +193,7 @@ section.success {
     padding-top: 75px;
   }
 }
-#portfolio .portfolio-item {
-  margin: 0 0 15px;
-  right: 0;
-}
+
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
@@ -203,11 +201,12 @@ section.success {
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .caption {
-  background: rgba(24, 188, 156, 0.9);
+  background: #9DD;
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  opacity: 0
+      ;
   transition: all ease 0.5s;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
@@ -216,13 +215,12 @@ section.success {
   opacity: 1;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
-  position: absolute;
+/*  position: absolute;*/
   width: 100%;
-  height: 20px;
+  height: 40%;
   font-size: 20px;
-  text-align: center;
-  top: 50%;
-  margin-top: -12px;
+    text-align: center;
+    margin: 20% 0 0 0;
   color: white;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
@@ -234,11 +232,10 @@ section.success {
 }
 #portfolio * {
   z-index: 2;
+    vertical-align: middle;
 }
 @media (min-width: 767px) {
-  #portfolio .portfolio-item {
-    margin: 0 0 30px;
-  }
+
 }
 .floating-label-form-group {
   position: relative;
@@ -365,8 +362,8 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn-success {
-  color: white;
-  background-color: #18BC9C;
+  color: #2C3E50;
+  background-color: #9DD;
   border-color: #18BC9C;
   font-weight: 700;
 }
@@ -376,7 +373,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: white;
-  background-color: #128f76;
+  background-color: #2C3E50;
   border-color: #11866f;
 }
 .btn-success:active,
@@ -513,4 +510,59 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
+}
+
+
+
+
+
+
+
+.portfolio-item img {
+    margin: auto;
+}
+
+
+
+
+
+#portfolio-aerotuck {
+    max-width: 72.2%
+}
+
+#porfolio-javascrip {
+    
+}
+
+#porfolio-javascript {
+    max-width: 72.3%;
+}
+
+#porfolio-reactJS {
+    max-width: 72.2%;
+}
+
+#portfolio-htmlcss {
+    max-width: 77.99%;
+}
+
+.progress-bar-basic {
+    background: red;
+}
+
+.progress-bar {
+    background: #2C3E50;
+}
+
+.progress-bar-advanced {
+    background: yellow;
+    color: #2C3E50;
+}
+
+.progress-bar-expert {
+    background: green;   
+}
+
+#portfolio-sharpspring {
+    max-width: 98%;
 }
